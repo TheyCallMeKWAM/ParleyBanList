@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5533876009758565"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parley Ban List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Parley Ban List</h1>
+
+    <!-- Top 5 Offenders & Lifetime Ban Section -->
+    <div class="leaderboard-container">
+        <div class="leaderboard">
+            <h2>Top 5 Offenders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player</th>
+                        <th>Times Banned</th>
+                    </tr>
+                </thead>
+                <tbody id="top-offenders"></tbody>
+            </table>
+        </div>
+
+        <div class="leaderboard">
+            <h2>Lifetime Ban</h2>
+            <table id="lifetime-ban-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody id="lifetime-ban"></tbody>
+            </table>
+            <p id="lifetime-ban-explanation">Players in the Lifetime Ban section have been permanently placed here due to repeated offenses or extreme cases.</p>
+        </div>
+    </div>
+
+            <!-- Submit Suggestion Button -->
+            <div class="submit-container">
+                <a href="submit.html" class="submit-button">Submit a Suggestion</a>
+            </div>
+        </div>
+
+    <!-- Full List -->
+    <div class="full-list-container">
+        <h1>Full List</h1>
+        
+        <!-- Search Bar and Sport Filter Buttons -->
+        <div class="controls">
+            <div id="sport-filters"></div>
+            <input type="text" id="search-bar" placeholder="Search for a player..." onkeyup="searchPlayers()">
+        </div>
+
+        <table id="full-list-table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('name')">Player Name</th>
+                    <th onclick="sortTable('team')">Team</th>
+                    <th onclick="sortTable('reason')">Reason</th>
+                    <th onclick="sortTable('date_added')">Date Added</th>
+                </tr>
+            </thead>
+            <tbody id="player-table"></tbody>
+        </table>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* Center the form properly */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+}
+
+/* Ensure inputs fit inside form */
+input, select, textarea {
+    width: calc(100% - 10px); /* Prevents overshooting */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures width includes padding */
+}
+
+label{
+    font-size: 18px;
+}
+
+/* Submit Button */
+button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Success Message */
+#submission-message {
+    font-size: 16px;
+    margin-top: 15px;
+    color: green;
+    text-align: center;
+}
+
+/* Back to Main Page Link */
+.back-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

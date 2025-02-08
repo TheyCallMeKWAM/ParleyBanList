@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Ban Suggestion</title>
+    <link rel="stylesheet" href="submit.css">
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Firebase Configuration
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        import firebaseConfig from "./config.js"; // Import the config file
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("ban-suggestion-form");
+
+            if (form) {
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    // Get form values
+                    const playerName = document.getElementById("player-name").value.trim();
+                    const team = document.getElementById("team").value.trim();
+                    const reason = document.getElementById("reason").value;
+                    const comments = document.getElementById("comments").value.trim();
+
+                    if (!playerName || !team || !reason) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    // Create submission object
+                    const suggestion = {
+                        playerName,
+                        team,
+                        reason,
+                        comments,
+                        timestamp: new Date().toISOString()
+                    };
+
+                    // Push to Firebase Database
+                    push(ref(database, "suggestions"), suggestion)
+                        .then(() => {
+                            document.getElementById("submission-message").style.display = "block";
+                            form.reset();
+                        })
+                        .catch((error) => {
+                            console.error("Error submitting suggestion:", error);
+                        });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Submit a Ban Suggestion</h1>
+
+        <form id="ban-suggestion-form">
+            <label for="player-name">Player Name:</label>
+            <input type="text" id="player-name" required>
+
+            <label for="team">Team:</label>
+            <input type="text" id="team" required>
+
+            <label for="sport">Sport</label>
+            <select id="sport" required>
+                <option value=""></option>
+                <option value="Basketball">Basketball (NBA/WNBA)</option>
+                <option value="Baseball">Baseball (MLB)</option>
+                <option value="Hockey">Hockey (NHL/PWHL)</option>
+                <option value="Football">Football (NFL)</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="comments">Additional Comments (Optional):</label>
+            <textarea id="comments" rows="4"></textarea>
+
+            <button type="submit">Submit Suggestion</button>
+        </form>
+
+        <p id="submission-message" style="display: none;">Thank you! Your suggestion has been submitted.</p>
+
+        <div class="back-link">
+            <a href="index.html">Back to Main Page</a>
+        </div>
+    </div>
+
+    <!-- Include JavaScript at the bottom -->
+    <script type="module" src="submit.js"></script>
+</body>
+</html>
+

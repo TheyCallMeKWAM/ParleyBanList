@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Jayson Tatum",
+      "sport": "NBA",
+      "team": "Boston Celtics",
+      "reason": "Rebounds",
+      "date_added": "2025-02-07"
+    },
+    {
+      "name": "Boston Celtics",
+      "sport": "NBA",
+      "team": "Boston Celtics",
+      "reason": "Moneyline vs Dallas 'Sold Best Player' Mavericks",
+      "date_added": "2025-02-07"
+    },
+    {
+        "name": "James Harden",
+        "sport": "NBA",
+        "team": "LA Clippers",
+        "reason": "Points",
+        "date_added": "2025-02-06"
+      }
+  ]
+  

@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Leaderboard & Lifetime Ban Section */
+.leaderboard-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.leaderboard {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+
+/* Lifetime Ban Table */
+#lifetime-ban-table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#lifetime-ban-table th, #lifetime-ban-table td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* Explanation Text Styling */
+#lifetime-ban-explanation {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .leaderboard-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leaderboard {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Full List Table */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Ensures columns remain fixed width */
+}
+
+/* Table Headers & Cells */
+th, td {
+    padding: 12px;
+    border: 1px solid black;
+    text-align: center;
+    white-space: normal; /* Allows text wrapping */
+    word-wrap: break-word; /* Ensures long text wraps properly */
+}
+
+/* Header Styling - No Hover Effect */
+th {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+
+
+
+/* Search Bar & Sport Filters */
+.controls {
+    margin: 20px 0 20px;
+}
+
+/* Search Bar */
+#search-bar {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Sport Filter Buttons */
+#sport-filters {
+    margin-bottom: 15px;
+}
+
+#sport-filters button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#sport-filters button:hover {
+    background: #0056b3;
+}
+
+/* Active filter button */
+#sport-filters button.active {
+    background: #28a745;
+}
+
+/* Full List Table */
+#full-list-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Ensures columns remain fixed width */
+}
+
+/* Table Headers & Cells */
+#full-list-table th, #full-list-table td {
+    padding: 12px;
+    border: 1px solid black;
+    text-align: center;
+    white-space: normal; /* Allows text wrapping */
+    word-wrap: break-word; /* Ensures long text wraps properly */
+}
+
+/* Header Styling - No Hover Effect */
+#full-list-table th {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/* Custom Column Widths for Full List Table */
+#full-list-table th:nth-child(1), #full-list-table td:nth-child(1) { width: 30%; } /* Player Name */
+#full-list-table th:nth-child(2), #full-list-table td:nth-child(2) { width: 20%; } /* Team */
+#full-list-table th:nth-child(3), #full-list-table td:nth-child(3) { width: 30%; } /* Reason */
+#full-list-table th:nth-child(4), #full-list-table td:nth-child(4) { width: 20%; } /* Date Added */
+
+
+/* Submit Suggestion Button */
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background: #0056b3;
+}
